@@ -24,9 +24,8 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
 ]
 dependencies = [
-    "importlib_resources",
+    "dtreg",
     "pandas",
-    "requests",    
 ]
 dynamic = ["version"]
 
