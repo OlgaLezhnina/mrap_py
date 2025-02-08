@@ -34,4 +34,6 @@ def scipy_f_oneway(*samples):
         targets=target_variable,
         has_output=output)
     json_object = to_jsonld(instance)
-    return json_object
+    result = {"anova": anova_object,
+              "json_ld": json_object}
+    return result
