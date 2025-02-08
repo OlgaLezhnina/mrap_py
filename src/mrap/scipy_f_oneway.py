@@ -14,7 +14,7 @@ def scipy_f_oneway(*samples):
     input_labels = []
     inputs = []
     for i in range(len(samples)):
-        input_label = argname('samples[' + str(i) + ']')
+        input_label = argname('samples[%d]' % i)
         input_labels.append(input_label)
         an_input = dt.data_item(label=input_label,
                                 has_characteristic=dt.matrix_size(
