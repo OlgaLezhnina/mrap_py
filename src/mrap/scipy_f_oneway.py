@@ -6,7 +6,7 @@ from scipy.stats import f_oneway
 from varname import argname
 
 
-def scipy_f_oneway(*samples, jsonld=True):
+def scipy_f_oneway(*samples, jsonld=False):
     anova_object = f_oneway(*samples)
     sum_object = pd.DataFrame({'F': anova_object[0], 'p': anova_object[1]}, index=[0])
     target_name = samples[0].name
