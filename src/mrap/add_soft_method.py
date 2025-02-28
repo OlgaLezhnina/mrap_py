@@ -2,9 +2,7 @@ import sys
 from importlib.metadata import version
 
 
-def add_soft_method(dt, lib_fun):
-    lib = lib_fun.split(";")[0]
-    fun = lib_fun.split(";")[1]
+def add_soft_method(dt, lib, fun):
     version_py = str(sys.version)[:5]
     version_lib = version(lib)
     software = dt.software(label="Python", version_info=version_py)

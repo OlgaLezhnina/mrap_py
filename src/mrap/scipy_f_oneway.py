@@ -22,7 +22,7 @@ def scipy_f_oneway(*samples, jsonld=False):
                                     number_of_columns=1))
         inputs.append(an_input)
 
-    soft_method = add_soft_method(dt, "scipy;f_oneway")
+    soft_method = add_soft_method(dt, "scipy", "f_oneway")
     soft_method.is_implemented_by = "f_oneway(" + ",".join(input_labels) + ")"
     target_variable = dt.component(label=target_name)
     output = dt.data_item(label="ANOVA results",
