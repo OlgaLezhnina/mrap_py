@@ -3,9 +3,8 @@ from .add_soft_method import add_soft_method
 from .utils import parse_code_string
 
 
-def write_analytic_instance(dt, lib, code_string, input_data, test_results):
-    schema = next(reversed(dt.__dict__.items()))[1]
-    schema_name = next(reversed(dt.__dict__.items()))[0]
+def write_analytic_instance(dt, schema_name, lib, code_string, input_data, test_results):
+    schema = getattr(dt, schema_name)
     parts = parse_code_string(code_string)
     soft_method = add_soft_method(dt, lib, parts["fun"])
     soft_method.is_implemented_by = code_string
