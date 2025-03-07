@@ -12,13 +12,14 @@ def add_input(dt, input_data):
         for key in input_data:
             inp_inst = dt.data_item(label=key,
                                     has_characteristic=dt.matrix_size(
-                                        number_of_rows="TODO1",
-                                        number_of_columns='TODO2'))
+                                        number_of_rows=len(input_data[key]),
+                                        number_of_columns=1))
             inputs.append(inp_inst)
     elif isinstance(input_data, pd.DataFrame):
+        nrows, ncols = input_data.shape
         input_label = argname('input_data')
         inputs = dt.data_item(label=input_label,
                               has_characteristic=dt.matrix_size(
-                                  number_of_rows="TODO1",
-                                  number_of_columns='TODO2'))
+                                  number_of_rows=nrows,
+                                  number_of_columns=ncols))
     return inputs
