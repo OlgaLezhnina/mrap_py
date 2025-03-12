@@ -26,5 +26,5 @@ def add_input(dt, input_data):
             )
         )
     else:
-        inputs = "TODO"
+        raise TypeError("Argument data_input should be either a pd.DataFrame or a dictionary")
     return inputs
