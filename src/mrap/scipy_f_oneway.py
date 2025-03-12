@@ -1,4 +1,4 @@
-from .add_soft_method import add_soft_method
+from .add_software_method import add_software_method
 from dtreg.load_datatype import load_datatype
 import pandas as pd
 from scipy.stats import f_oneway
@@ -21,14 +21,14 @@ def scipy_f_oneway(*samples):
                                     number_of_columns=1))
         inputs.append(an_input)
 
-    soft_method = add_soft_method(dt, "scipy", "f_oneway")
-    soft_method.is_implemented_by = "f_oneway(" + ",".join(input_labels) + ")"
+    software_method = add_software_method(dt, "scipy", "f_oneway")
+    software_method.is_implemented_by = "f_oneway(" + ",".join(input_labels) + ")"
     target_variable = dt.component(label=target_name)
     output = dt.data_item(label="ANOVA results",
                           source_table=sum_object)
     instance = dt.group_comparison(
         label="Anova " + target_name,
-        executes=soft_method,
+        executes=software_method,
         has_input=inputs,
         targets=target_variable,
         has_output=output)
