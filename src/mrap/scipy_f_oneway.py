@@ -1,12 +1,11 @@
 from .add_soft_method import add_soft_method
-from .utils import assign_result
 from dtreg.load_datatype import load_datatype
 import pandas as pd
 from scipy.stats import f_oneway
 from varname import argname
 
 
-def scipy_f_oneway(*samples, jsonld=False):
+def scipy_f_oneway(*samples):
     anova_object = f_oneway(*samples)
     sum_object = pd.DataFrame({'F': anova_object[0], 'p': anova_object[1]}, index=[0])
     target_name = samples[0].name
@@ -33,7 +32,6 @@ def scipy_f_oneway(*samples, jsonld=False):
         has_input=inputs,
         targets=target_variable,
         has_output=output)
-    dtreg_object = assign_result(instance, jsonld)
     result = {"anova": anova_object,
-              "dtreg_object": dtreg_object}
+              "dtreg_object": instance}
     return result
