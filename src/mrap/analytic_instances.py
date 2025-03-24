@@ -9,3 +9,10 @@ def group_comparison(lib, code_string, input_data, test_results):
                                               lib, code_string, input_data, test_results)
     group_comp_inst.targets = add_target(dt, input_data)
     return group_comp_inst
+
+
+def algorithm_evaluation(lib, code_string, input_data, test_results):
+    dt = load_datatype("https://doi.org/21.T11969/5e782e67e70d0b2a022a")
+    alg_eval_inst = write_analytic_instance(dt, "algorithm_evaluation",
+                                            lib, code_string, input_data, test_results)
+    return alg_eval_inst
