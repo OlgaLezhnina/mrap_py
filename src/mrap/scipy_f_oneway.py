@@ -21,7 +21,7 @@ def scipy_f_oneway(*samples):
                                     number_of_columns=1))
         inputs.append(an_input)
 
-    software_method = add_software_method(dt, "scipy", "f_oneway")
+    software_method = add_software_method(dt, ["scipy", "f_oneway"])
     software_method.is_implemented_by = "f_oneway(" + ",".join(input_labels) + ")"
     target_variable = dt.component(label=target_name)
     output = dt.data_item(label="ANOVA results",

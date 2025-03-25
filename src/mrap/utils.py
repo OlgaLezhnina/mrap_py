@@ -1,6 +1,3 @@
-from dtreg.to_jsonld import to_jsonld
-
-
-def parse_code_string(code_string):
-    result = {"fun": code_string.split("(")[0]}
+def parse_code_list(code_list):
+    result = {"fun": code_list[1].split("(")[0]}
     return result
