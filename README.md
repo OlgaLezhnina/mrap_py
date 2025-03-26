@@ -3,7 +3,7 @@
 <!-- badges: end -->
 
 The goal of mrap is to provide wrapper functions to reduce the user's effort 
-in writing machine-reusable data with the dtreg library. The growing set of wrappers covers 
+in writing machine-readable data with the dtreg library. The growing set of wrappers covers 
 functions from scipy and other widely used libraries. 
 The mrap.analytic_instances module contains wrappers for analytical schemata used in 
 the ORKG-reborn approach (see the [help page](https://reborn.orkg.org/pages/help)).
