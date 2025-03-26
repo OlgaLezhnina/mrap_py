@@ -12,7 +12,7 @@ authors = [
 maintainers = [
     {name = "Olga Lezhnina", email = "olga.lezhnina@tib.eu"}
 ]
-description = "Machine-Radable Data Analysis Results with Function Wrappers"
+description = "Machine-Readable Data Analysis Results with Function Wrappers"
 readme = "README.md"
 requires-python = ">=3.8"
 keywords = ["wrappers", "schema", "JSON-LD"]
