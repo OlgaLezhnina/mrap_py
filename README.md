@@ -16,8 +16,9 @@ To write the results of your data analysis as JSON-LD:
 ## Installation
 
 ```sh
-## install from PyPi:
-pip install mrap
+## install from GitHub:
+pip install git+https://github.com/OlgaLezhnina/mrap_py.git#egg=mrap_py
+## TODO GitLab
 ```
 
 ## Example
