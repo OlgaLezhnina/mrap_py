@@ -6,6 +6,13 @@ from varname import argname
 
 
 def scipy_f_oneway(*samples):
+    """
+    Create an anova object and a group_comparison instance
+    by wrapping the function scipy.stats.f_oneway
+
+    :param *samples: two or more data arrays, e.g., pd.Series
+    :return: a list of anova object and group_comparison instance
+    """
     anova_object = f_oneway(*samples)
     sum_object = pd.DataFrame({'F': anova_object[0], 'p': anova_object[1]}, index=[0])
     target_name = samples[0].name

@@ -4,6 +4,13 @@ from .utils import parse_code_list
 
 
 def add_software_method(dt, code_list):
+    """
+    Write a software_method instance to be used by other instances
+
+    :param dt: an analytical schema datatype
+    :param code_list: a list of strings for library and code line, "N/A" if not given
+    :return: a software_method instance
+    """
     version_py = str(sys.version)[:5]
     software = dt.software(label="Python", version_info=version_py)
     if code_list == "N/A":

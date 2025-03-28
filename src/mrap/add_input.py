@@ -4,6 +4,13 @@ from varname import argname
 
 
 def add_input(dt, input_data):
+    """
+    Write an input instance to be used by other instances
+
+    :param dt: an analytical schema datatype
+    :param input_data: pd.DataFrame, a dictionary, or a list with URL, n rows, and n columns
+    :return: an input instance
+    """
     if isinstance(input_data, Mapping):
         inputs = []
         for key in input_data:
