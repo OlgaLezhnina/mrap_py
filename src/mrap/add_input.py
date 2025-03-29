@@ -41,5 +41,5 @@ def add_input(dt, input_data):
             )
         )
     else:
-        raise TypeError("Argument data_input should be either a pd.DataFrame or a dictionary")
+        raise TypeError("Argument data_input should be a pd.DataFrame, a dictionary, or a list")
     return inputs
