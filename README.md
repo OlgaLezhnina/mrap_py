@@ -57,4 +57,35 @@ with open('my_file.json', 'w') as f:
     f.write(my_json)
 
 ```
+It is also possible to write the results of a few algorithms evaluated on the same data
+for the same task and include these into the data_analysis datatype:
+
+```python
+## import the list wrapper
+from mrap.list_algorithm_evaluations import list_algorithm_evaluations
+## import load_datatype from dtreg
+from dtreg.load_datatype import load_datatype
+## import to_jsonld from dtreg to convert the result into JSON-LD
+from dtreg.to_jsonld import to_jsonld
+## run your analysis and write a nested dictionary
+my_results = {"ABC": {"F1": 0.46, "recall": 0.64},
+             "KLM": {"F1": 0.55, "recall": 0.38},
+             "XYZ": {"F1": 0.87, "recall": 0.78}}
+## create the list of instances
+all_results = list_algorithm_evaluations("N/A", "my URL", "Classification", my_results)
+## modify any instance manually
+all_results[0].label = "ABC evaluation on XXX data"
+## load the data_analysis datatype and create the final instance
+dt_final = load_datatype("https://doi.org/21.T11969/feeb33ad3e4440682a4d")
+final_instance = dt_final.data_analysis(has_part=all_results)
+## make any changes to the final instance
+final_instance.is_implemented_by = "code_URL"
+## write the final instance in JSON-LD format as a string
+final_json = to_jsonld(final_instance)
+## the result can be saved as a JSON file
+with open('final_file.json', 'w') as f:
+    f.write(final_json)
+
+```
+
 For more information, please see the [help page](https://reborn.orkg.org/pages/help).
