@@ -3,8 +3,8 @@
 <!-- badges: end -->
 
 The goal of mrap is to provide wrapper functions to reduce the user's effort 
-in writing machine-readable data with the dtreg library. The growing set of wrappers covers 
-functions from scipy and other widely used libraries. 
+in writing machine-readable data with the [dtreg library](https://pypi.org/project/dtreg/).
+The growing set of wrappers covers functions from scipy and other widely used libraries.
 The mrap.analytic_instances module contains wrappers for analytical schemata used in 
 the ORKG-reborn approach (see the [help page](https://reborn.orkg.org/pages/help)).
 
@@ -16,21 +16,23 @@ To write the results of your data analysis as JSON-LD:
 ## Installation
 
 ```sh
-## install from GitHub:
-pip install git+https://github.com/OlgaLezhnina/mrap_py.git#egg=mrap_py
-## TODO GitLab
+## activate a virtual environment (optional)
+python3 -m venv .venv
+source .venv/bin/activate
+## install mrap from GitHub:
+pip install git+https://github.com/OlgaLezhnina/mrap_py.git
 ```
 
 ## Example
 Let us assume you intend to report the classification performance of your_fancy_algorithm. 
 From the [help page](https://reborn.orkg.org/pages/help) you know that the wrapper of choice is 
-algorithm_evaluation(). The required arguments are:    
+``algorithm_evaluation()``. The required arguments are:
 
-* code_list: a string "N/A" if not given or a list of two strings - 
+* ``code_list``: a string "N/A" if not given or a list of two strings -
 the library and the line of code used for implementing the analysis.
-* input_data: a pd.DataFrame, a dictionary of pd.Series with names, or a string which is
+* ``input_data``: a pd.DataFrame, a dictionary of pd.Series with names, or a string which is
 either the data URL or the file name. 
-* dictionary_results: metrics as keys with values.
+* ``dictionary_results``: metrics as keys with values.
 
 The wrapper writes information about the data, your results, your Python version, 
 the library version, etc. After adding the information about the algorithm and the task manually, 
@@ -38,9 +40,8 @@ and correcting any fields you wish, you can convert the instance
 into a machine-readable JSON-LD string. 
   
 ```python
-## import the selected wrapper from mrap
+## import the required modules
 from mrap.analytic_instances import algorithm_evaluation
-## import to_jsonld from dtreg to convert the result into JSON-LD
 from dtreg.to_jsonld import to_jsonld
 ## run your analysis and write the results as a dictionary
 results_dict = {"F1": 0.46, "recall": 0.51}
@@ -61,11 +62,9 @@ It is also possible to write the results of a few algorithms evaluated on the sa
 for the same task and include these into the data_analysis datatype:
 
 ```python
-## import the list wrapper
+## import the required modules
 from mrap.list_algorithm_evaluations import list_algorithm_evaluations
-## import load_datatype from dtreg
 from dtreg.load_datatype import load_datatype
-## import to_jsonld from dtreg to convert the result into JSON-LD
 from dtreg.to_jsonld import to_jsonld
 ## run your analysis and write a nested dictionary
 my_results = {"ABC": {"F1": 0.46, "recall": 0.64},
