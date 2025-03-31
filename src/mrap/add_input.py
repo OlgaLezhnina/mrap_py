@@ -32,14 +32,8 @@ def add_input(dt, input_data):
                 number_of_columns=ncols
             )
         )
-    elif isinstance(input_data, list):
-        inputs = dt.data_item(
-            source_url=input_data[0],
-            has_characteristic=dt.matrix_size(
-                number_of_rows=input_data[1],
-                number_of_columns=input_data[2]
-            )
-        )
+    elif isinstance(input_data, str):
+        inputs = dt.data_item(source_url=input_data)
     else:
-        raise TypeError("Argument data_input should be a pd.DataFrame, a dictionary, or a list")
+        raise TypeError("Argument data_input should be a pd.DataFrame, a dictionary, or a string")
     return inputs

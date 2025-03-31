@@ -28,8 +28,8 @@ algorithm_evaluation(). The required arguments are:
 
 * code_list: a string "N/A" if not given or a list of two strings - 
 the library and the line of code used for implementing the analysis.
-* input_data: a pd.DataFrame, a dictionary of pd.Series with names, or a list 
-containing the data URL as a string, the number of rows, and the number of columns. 
+* input_data: a pd.DataFrame, a dictionary of pd.Series with names, or a string which is
+either the data URL or the file name. 
 * dictionary_results: metrics as keys with values.
 
 The wrapper writes information about the data, your results, your Python version, 
@@ -46,7 +46,7 @@ from dtreg.to_jsonld import to_jsonld
 results_dict = {"F1": 0.46, "recall": 0.51}
 ## create your instance with the wrapper
 my_instance = algorithm_evaluation(["the_library", "the_line_of_code"], 
-                                   ["my_URL", 5000, 12], results_dict)
+                                   "my_URL", results_dict)
 ## modify the instance by writing fields manually
 my_instance.evaluates = "my_fancy_algorithm"
 my_instance.evaluates_for = "Classification"
