@@ -11,7 +11,8 @@ def add_software_method(dt, code_list):
     :param code_list: a list of strings for library and code line, "N/A" if not given
     :return: a software_method instance
     """
-    version_py = str(sys.version)[:5]
+    vers = sys.version_info
+    version_py = str(vers[0]) + "." + str(vers[1]) + "." + str(vers[2])
     software = dt.software(label="Python", version_info=version_py)
     if code_list == "N/A":
         software_method = dt.software_method(part_of=software)
