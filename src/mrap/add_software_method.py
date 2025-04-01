@@ -13,7 +13,9 @@ def add_software_method(dt, code_list):
     """
     vers = sys.version_info
     version_py = str(vers[0]) + "." + str(vers[1]) + "." + str(vers[2])
-    software = dt.software(label="Python", version_info=version_py)
+    software = dt.software(label="Python",
+                           version_info=version_py,
+                           has_support_url="https://www.python.org")
     if code_list == "N/A":
         software_method = dt.software_method(part_of=software)
     elif isinstance(code_list, list):
