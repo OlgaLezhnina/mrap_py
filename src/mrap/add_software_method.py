@@ -22,7 +22,10 @@ def add_software_method(dt, code_list):
         lib = code_list[0]
         fun = parse_code_list(code_list)["fun"]
         version_lib = version(lib)
-        software_library = dt.software_library(label=lib, version_info=version_lib,
+        url_lib = "https://pypi.org/project/" + lib + "/#documentation"
+        software_library = dt.software_library(label=lib,
+                                               version_info=version_lib,
+                                               has_support_url=url_lib,
                                                part_of=software)
         software_method = dt.software_method(label=fun, part_of=software_library,
                                              is_implemented_by=code_list[1])
