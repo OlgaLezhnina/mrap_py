@@ -6,7 +6,7 @@ The goal of mrap is to provide wrapper functions to reduce the user's effort
 in writing machine-readable data with the [dtreg library](https://pypi.org/project/dtreg/).
 The growing set of wrappers covers functions from scipy and other widely used libraries.
 The mrap.analytic_instances module contains wrappers for analytical schemata used in 
-the ORKG-reborn approach (see the [help page](https://reborn.orkg.org/pages/help)).
+the [ORKG-reborn approach](https://reborn.orkg.org/pages/help).
 
 To write the results of your data analysis as JSON-LD:
 * Select a wrapper from mrap, check the types of arguments it requires, and create an instance.
@@ -40,7 +40,6 @@ and correcting any fields you wish, you can convert the instance
 into a machine-readable JSON-LD string. 
   
 ```python
-## import the required modules
 from mrap.analytic_instances import algorithm_evaluation
 from dtreg.to_jsonld import to_jsonld
 ## run your analysis and write the results as a dictionary
@@ -62,7 +61,6 @@ It is also possible to write the results of a few algorithms evaluated on the sa
 for the same task and include these into the data_analysis datatype:
 
 ```python
-## import the required modules
 from mrap.list_algorithm_evaluations import list_algorithm_evaluations
 from dtreg.load_datatype import load_datatype
 from dtreg.to_jsonld import to_jsonld
