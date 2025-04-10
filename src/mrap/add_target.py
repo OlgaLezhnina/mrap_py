@@ -1,9 +1,9 @@
 from collections.abc import Mapping
 
 
-def add_target(dt, input_data):
+def add_comparison_target(dt, input_data):
     """
-    Write a target instance to be used by other instances
+    Write a target instance for group_comparison
 
     :param dt: an analytical schema datatype
     :param input_data: pd.DataFrame, a dictionary, or a list with URL, n rows, and n columns
