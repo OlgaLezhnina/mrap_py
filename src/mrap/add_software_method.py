@@ -1,5 +1,5 @@
 import sys
-from importlib.metadata import version
+from .utils import get_library_info
 from .utils import parse_code_list
 
 
@@ -21,8 +21,9 @@ def add_software_method(dt, code_list):
     elif isinstance(code_list, list):
         lib = code_list[0]
         fun = parse_code_list(code_list)["fun"]
-        version_lib = version(lib)
-        url_lib = "https://pypi.org/project/" + lib + "/#documentation"
+        library_info = get_library_info(lib)
+        version_lib = library_info["version_lib"]
+        url_lib = library_info["url_lib"]
         software_library = dt.software_library(label=lib,
                                                version_info=version_lib,
                                                has_support_url=url_lib,
