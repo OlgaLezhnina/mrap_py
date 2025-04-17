@@ -49,7 +49,7 @@ def group_comparison(code_list, input_data, test_results):
     dt = load_datatype("https://doi.org/21.T11969/b9335ce2c99ed87735a6")
     group_comparison_inst = write_analytic_instance(dt, "group_comparison",
                                                     code_list, input_data)
-    group_comparison_inst.targets = add_comparison_target(dt, input_data)
+    group_comparison_inst.targets = add_comparison_target(dt, code_list, input_data)
     group_comparison_inst.has_output = add_generic_output(dt, "group_comparison", test_results)
     return group_comparison_inst
 

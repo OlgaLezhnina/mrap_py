@@ -1,11 +1,14 @@
+import pandas as pd
 from collections.abc import Mapping
+from .utils import parse_code_list
 
 
-def add_comparison_target(dt, input_data):
+def add_comparison_target(dt, code_list, input_data):
     """
     Write a target instance for group_comparison
 
     :param dt: an analytical schema datatype
+    :param code_list: a list of strings for library and code line, "N/A" if not given
     :param input_data: pd.DataFrame, a dictionary, or a list with URL, n rows, and n columns
     :return: a target instance
     """
@@ -13,7 +16,9 @@ def add_comparison_target(dt, input_data):
         for item in input_data.values():
             target_name = item.name
             break
+    elif isinstance(input_data, pd.DataFrame):
+        target_name = parse_code_list(code_list)["target_name"]
     else:
-        target_name = "TODO"
+        target_name = None
     target_variable = dt.component(label=target_name)
     return target_variable
