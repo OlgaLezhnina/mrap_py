@@ -1,4 +1,5 @@
 from dtreg.load_datatype import load_datatype
+from .add_level import add_level
 from .add_output import add_evaluation_output
 from .add_output import add_generic_output
 from .add_target import add_comparison_target
@@ -34,6 +35,7 @@ def multilevel_analysis(code_list, input_data, test_results):
     dt = load_datatype("https://doi.org/21.T11969/c6b413ba96ba477b5dca")
     mult_analysis_inst = write_analytic_instance(dt, "multilevel_analysis",
                                                  code_list, input_data)
+    mult_analysis_inst.level = add_level(dt, code_list)
     mult_analysis_inst.targets = add_generic_target(dt, code_list, input_data)
     mult_analysis_inst.has_output = add_generic_output(dt, "multilevel_analysis",
                                                        test_results)
