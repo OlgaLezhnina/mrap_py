@@ -7,6 +7,20 @@ from .add_target import add_generic_target
 from .write_analytic_instance import write_analytic_instance
 
 
+def data_analysis(instances, code_reference):
+    """
+    Create a data analysis instance
+
+    :param instances: analytic instance or a list of instances
+    :param code_reference: a URL of the code implementing data analysis
+    :return: a data analysis instance
+    """
+    dt = load_datatype("https://doi.org/21.T11969/feeb33ad3e4440682a4d")
+    data_analysis_inst = dt.data_analysis(has_part=instances,
+                                          is_implemented_by=code_reference)
+    return data_analysis_inst
+
+
 def descriptive_statistics(code_list, input_data, test_results):
     """
     Create a descriptive_statistics instance
