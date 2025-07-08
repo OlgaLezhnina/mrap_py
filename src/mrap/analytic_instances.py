@@ -7,7 +7,7 @@ from .add_target import add_generic_target
 from .write_analytic_instance import write_analytic_instance
 
 
-def data_analysis(instances, code_reference):
+def data_analysis(instances, code_reference=None):
     """
     Create a data analysis instance
 
