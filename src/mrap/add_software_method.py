@@ -7,8 +7,8 @@ def add_software_method(dt, code_list):
     """
     Write a software_method instance to be used by other instances
 
-    :param dt: an analytical schema datatype
-    :param code_list: a list of strings for library and code line, "N/A" if not given
+    :param dt: a datatype loaded with the dtreg package
+    :param code_list: a list with library and code line strings, "N/A" if not given
     :return: a software_method instance
     """
     vers = sys.version_info

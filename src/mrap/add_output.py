@@ -7,7 +7,7 @@ def add_generic_output(dt, schema_name, test_results):
     """
     Write a generic output instance to be used by other instances
 
-    :param dt: an analytical schema datatype
+    :param dt: a datatype loaded with the dtreg package
     :param test_results: a pd.DataFrame or a list of data frames
     :return: a generic output instance
     """
@@ -20,7 +20,7 @@ def add_evaluation_output(dt, dictionary_results):
     """
     Write an algorithm_evaluation output instance to be used by other instances
 
-    :param dt: an analytical schema datatype
+    :param dt: a datatype loaded with the dtreg package
     :param dictionary_results: a dictionary of metrics and values
     :return: an algorithm_evaluation output instance
     """

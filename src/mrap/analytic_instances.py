@@ -9,7 +9,7 @@ from .write_analytic_instance import write_analytic_instance
 
 def data_analysis(instances, code_reference=None):
     """
-    Create a data analysis instance
+    Create a data_analysis instance
 
     :param instances: analytic instance or a list of instances
     :param code_reference: a URL of the code implementing data analysis
@@ -25,8 +25,8 @@ def descriptive_statistics(code_list, input_data, test_results):
     """
     Create a descriptive_statistics instance
 
-    :param code_list: a list of strings for library and code line, "N/A" is not given
-    :param input_data: pd.DataFrame, a dictionary, or a URL
+    :param code_list: a list with library and code line strings, "N/A" is not given
+    :param input_data: pd.DataFrame, a dictionary, or a URL as a string
     :param test_results: a pd.DataFrame or a list of data frames
     :return: a descriptive_statistics instance
     """
@@ -42,9 +42,9 @@ def algorithm_evaluation(code_list, input_data, dictionary_results):
     """
     Create an algorithm_evaluation instance
 
-    :param code_list: a list of strings for library and code line, "N/A" is not given
-    :param input_data: pd.DataFrame, a dictionary, or a URL
-    :param dictionary_results: a dictionary of metrics and values
+    :param code_list: a list with library and code line strings, "N/A" is not given
+    :param input_data: pd.DataFrame, a dictionary, or a URL as a string
+    :param dictionary_results: a dictionary with metrics and values
     :return: an algorithm_evaluation instance
     """
     dt = load_datatype("https://doi.org/21.T11969/5e782e67e70d0b2a022a")
@@ -58,8 +58,8 @@ def multilevel_analysis(code_list, input_data, test_results):
     """
     Create a multilevel_analysis instance
 
-    :param code_list: a list of strings for library and code line, "N/A" is not given
-    :param input_data: pd.DataFrame, a dictionary, or a URL
+    :param code_list: a list with library and code line strings, "N/A" is not given
+    :param input_data: pd.DataFrame, a dictionary, or a URL as a string
     :param test_results: a pd.DataFrame or a list of data frames
     :return: a multilevel_analysis instance
     """
@@ -77,8 +77,8 @@ def correlation_analysis(code_list, input_data, test_results):
     """
     Create a correlation_analysis instance
 
-    :param code_list: a list of strings for library and code line, "N/A" is not given
-    :param input_data: pd.DataFrame, a dictionary, or a URL
+    :param code_list: a list with library and code line strings, "N/A" is not given
+    :param input_data: pd.DataFrame, a dictionary, or a URL as a string
     :param test_results: a pd.DataFrame or a list of data frames
     :return: a correlation_analysis instance
     """
@@ -94,8 +94,8 @@ def group_comparison(code_list, input_data, test_results):
     """
     Create a group_comparison instance
 
-    :param code_list: a list of strings for library and code line, "N/A" is not given
-    :param input_data: pd.DataFrame, a dictionary, or a URL
+    :param code_list: a list with library and code line strings, "N/A" is not given
+    :param input_data: pd.DataFrame, a dictionary, or a URL as a string
     :param test_results: a pd.DataFrame or a list of data frames
     :return: a group_comparison instance
     """
@@ -112,8 +112,8 @@ def regression_analysis(code_list, input_data, test_results):
     """
     Create a regression_analysis instance
 
-    :param code_list: a list of strings for library and code line, "N/A" is not given
-    :param input_data: pd.DataFrame, a dictionary, or a URL
+    :param code_list: a list with library and code line strings, "N/A" is not given
+    :param input_data: pd.DataFrame, a dictionary, or a URL as a string
     :param test_results: a pd.DataFrame or a list of data frames
     :return: a regression_analysis instance
     """
@@ -130,8 +130,8 @@ def class_prediction(code_list, input_data, test_results):
     """
     Create a class_prediction instance
 
-    :param code_list: a list of strings for library and code line, "N/A" is not given
-    :param input_data: pd.DataFrame, a dictionary, or a URL
+    :param code_list: a list with library and code line strings, "N/A" is not given
+    :param input_data: pd.DataFrame, a dictionary, or a URL as a string
     :param test_results: a pd.DataFrame or a list of data frames
     :return: a class_prediction instance
     """
@@ -148,8 +148,8 @@ def class_discovery(code_list, input_data, test_results):
     """
     Create a class_discovery instance
 
-    :param code_list: a list of strings for library and code line, "N/A" is not given
-    :param input_data: pd.DataFrame, a dictionary, or a URL
+    :param code_list: a list with library and code line strings, "N/A" is not given
+    :param input_data: pd.DataFrame, a dictionary, or a URL as a string
     :param test_results: a pd.DataFrame or a list of data frames
     :return: a class_discovery instance
     """
@@ -165,8 +165,8 @@ def factor_analysis(code_list, input_data, test_results):
     """
     Create a factor_analysis instance
 
-    :param code_list: a list of strings for library and code line, "N/A" is not given
-    :param input_data: pd.DataFrame, a dictionary, or a URL
+    :param code_list: a list with library and code line strings, "N/A" is not given
+    :param input_data: pd.DataFrame, a dictionary, or a URL as a string
     :param test_results: a pd.DataFrame or a list of data frames
     :return: a factor_analysis instance
     """

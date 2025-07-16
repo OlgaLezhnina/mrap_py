@@ -6,10 +6,10 @@ from importlib.metadata import version
 
 def parse_code_list(code_list):
     """
-    Parse two strings from code_list to get information about the software method
+    Parse code_list to get names contained in the code line
 
-    :param code_list: a list of strings for library and code line, "N/A" if not given
-    :return: a dictionary with strings as keys and values
+    :param code_list: a list with library and code line strings, "N/A" if not given
+    :return: a dictionary with names as strings
     """
     code_str = code_list[1]
     function_name = code_str.split("(")[0]
@@ -47,7 +47,7 @@ def get_library_info(lib):
     """
     Extract a library version and documentation URL
 
-    :param lib: a string which is a Python library
+    :param lib: a Python library name as a string
     :return: a dictionary with the library version and URL, or None if not found
     """
     try:

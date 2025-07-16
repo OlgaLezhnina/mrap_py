@@ -6,12 +6,12 @@ from .utils import get_comparison_target_name
 
 def add_comparison_target(dt, code_list, input_data):
     """
-    Write a target instance for group_comparison
+    Write a target component instance for group_comparison
 
     :param dt: a datatype loaded with the dtreg package
-    :param code_list: a list of strings for library and code line, "N/A" if not given
-    :param input_data: pd.DataFrame, a dictionary, or a list with URL, n rows, and n columns
-    :return: a target instance
+    :param code_list: a list with library and code line strings, "N/A" if not given
+    :param input_data: pd.DataFrame, a dictionary, or a URL as a string
+    :return: a target component instance
     """
     if isinstance(input_data, Mapping):
         target_name = get_comparison_target_name(input_data)
@@ -25,12 +25,12 @@ def add_comparison_target(dt, code_list, input_data):
 
 def add_generic_target(dt, code_list, input_data):
     """
-    Write a target instance
+    Write a target component instance
 
     :param dt: a datatype loaded with the dtreg package
-    :param code_list: a list of strings for library and code line, "N/A" if not given
-    :param input_data: pd.DataFrame, a dictionary, or a list with URL, n rows, and n columns
-    :return: a target instance
+    :param code_list: a list with library and code line strings, "N/A" if not given
+    :param input_data: pd.DataFrame, a dictionary, or a URL as a string
+    :return: a target component instance
     """
     target_name = parse_code_list(code_list)["target_name"]
     target_variable = dt.component(label=target_name)

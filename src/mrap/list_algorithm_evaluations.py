@@ -3,12 +3,12 @@ from .analytic_instances import algorithm_evaluation
 
 def list_algorithm_evaluations(code_list, input_data, task, sum_dictionary):
     """
-    Create a list of lgorithm_evaluation instances
+    Create a list of algorithm_evaluation instances
 
-    :param code_list: a list of strings for library and code line, "N/A" is not given
-    :param input_data: pd.DataFrame, a dictionary, or a string
-    :param sum_dictionary: a nested dictionary of algorithms as strings and results
-    :return: a list of instances
+    :param code_list: a list with library and code line strings, "N/A" if not given
+    :param input_data: pd.DataFrame, a dictionary, or a URL as a string
+    :param sum_dictionary: a nested dictionary with algorithms and their results
+    :return: a list of algorithm evaluation instances
     """
     algorithms_instances = []
     for key, value in sum_dictionary.items():

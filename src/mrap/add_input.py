@@ -7,8 +7,8 @@ def add_input(dt, input_data):
     """
     Write an input instance to be used by other instances
 
-    :param dt: an analytical schema datatype
-    :param input_data: pd.DataFrame, a dictionary, or a list with URL, n rows, and n columns
+    :param dt: a datatype loaded with the dtreg package
+    :param input_data: pd.DataFrame, a dictionary, or a URL as a string
     :return: an input instance
     """
     if isinstance(input_data, Mapping):
