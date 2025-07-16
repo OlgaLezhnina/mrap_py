@@ -48,7 +48,7 @@ def get_library_info(lib):
     Extract a library version and documentation URL
 
     :param lib: a Python library name as a string
-    :return: a dictionary with the library version and URL, or None if not found
+    :return: a dictionary with the library information, or None if not found
     """
     try:
         version(lib)
