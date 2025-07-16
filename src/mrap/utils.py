@@ -23,6 +23,26 @@ def parse_code_list(code_list):
     return result
 
 
+def get_comparison_target_name(input_dict):
+    """
+    Extract a target name from a dictionary
+
+    :param input_dict: a dictionary with pd.Series
+    :return: a target name or None
+    """
+    name_list = []
+    for item in input_dict.values():
+        if item.name in name_list:
+            pass
+        else:
+            name_list.append(item.name)
+    if len(name_list) == 1:
+        target_name = name_list[0]
+    else:
+        target_name = None
+    return target_name
+
+
 def get_library_info(lib):
     """
     Extract a library version and documentation URL

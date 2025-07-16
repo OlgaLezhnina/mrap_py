@@ -1,33 +1,14 @@
 import pandas as pd
 from collections.abc import Mapping
 from .utils import parse_code_list
-
-
-def get_comparison_target_name(input_dict):
-    """
-    Extract a target name from a dictionary
-
-    :param input_dict: a dictionary with pd.Series
-    :return: a target name or None
-    """
-    name_list = []
-    for item in input_dict.values():
-        if item.name in name_list:
-            pass
-        else:
-            name_list.append(item.name)
-    if len(name_list) == 1:
-        target_name = name_list[0]
-    else:
-        target_name = None
-    return target_name
+from .utils import get_comparison_target_name
 
 
 def add_comparison_target(dt, code_list, input_data):
     """
     Write a target instance for group_comparison
 
-    :param dt: an analytical schema datatype
+    :param dt: a datatype loaded with the dtreg package
     :param code_list: a list of strings for library and code line, "N/A" if not given
     :param input_data: pd.DataFrame, a dictionary, or a list with URL, n rows, and n columns
     :return: a target instance
@@ -46,7 +27,7 @@ def add_generic_target(dt, code_list, input_data):
     """
     Write a target instance
 
-    :param dt: an analytical schema datatype
+    :param dt: a datatype loaded with the dtreg package
     :param code_list: a list of strings for library and code line, "N/A" if not given
     :param input_data: pd.DataFrame, a dictionary, or a list with URL, n rows, and n columns
     :return: a target instance
