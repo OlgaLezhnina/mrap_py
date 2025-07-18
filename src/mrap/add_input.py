@@ -35,5 +35,5 @@ def add_input(dt, input_data):
     elif isinstance(input_data, str):
         inputs = dt.data_item(source_url=input_data)
     else:
-        raise TypeError("Argument data_input should be a pd.DataFrame, a dictionary, or a string")
+        raise TypeError("Argument input_data should be a pd.DataFrame, a dictionary, or a string")
     return inputs
