@@ -18,8 +18,8 @@ def parse_code_list(code_list):
     else:
         target_name = None
     if "groups=" in code_str:
-        group_str = code_str.split("groups")[1].split("[")[1]
-        level_name = ''.join(e for e in group_str if e.isalnum())
+        group_str = code_str.split("groups")[1].split(",")[0].split("[")[1]
+        level_name = ''.join(letter for letter in group_str if letter.isalnum())
     else:
         level_name = None
     result = {"fun": function_name,
