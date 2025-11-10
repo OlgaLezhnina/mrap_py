@@ -11,19 +11,16 @@ class TestAddTarget(unittest.TestCase):
         target_inst = add_generic_target(dt, "N/A", iris)
         self.assertEqual(dt.component.dt_name, target_inst.dt_name)
 
-    def test_generic_target_url(self):
+    def test_generic_target_extractable(self):
+        dt = load_datatype("https://doi.org/21.T11969/b9335ce2c99ed87735a6")
+        code_list = ["statsmodels",
+                     "smf.mixedlm('Weight ~ Time', data, groups=data['Pig'])"]
+        target_inst = add_generic_target(dt, code_list, "data_url")
+        self.assertEqual(target_inst.label, 'Weight')
+
+    def test_generic_target_none(self):
         dt = load_datatype("https://doi.org/21.T11969/b9335ce2c99ed87735a6")
         target_inst = add_generic_target(dt, "N/A", "data_url")
-        self.assertEqual(target_inst.label, None)
-
-    def test_generic_target_dataframe(self):
-        dt = load_datatype("https://doi.org/21.T11969/b9335ce2c99ed87735a6")
-        target_inst = add_generic_target(dt, "TODO", "data_url")
-        self.assertEqual(target_inst.label, None)
-
-    def test_generic_target_dict(self):
-        dt = load_datatype("https://doi.org/21.T11969/b9335ce2c99ed87735a6")
-        target_inst = add_generic_target(dt, "TODO", "data_url")
         self.assertEqual(target_inst.label, None)
 
     def test_comparison_target_inst_name(self):
