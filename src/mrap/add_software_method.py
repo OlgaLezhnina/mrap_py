@@ -28,7 +28,8 @@ def add_software_method(dt, code_list):
                                                version_info=version_lib,
                                                has_support_url=url_lib,
                                                part_of=software)
-        software_method = dt.software_method(label=fun, part_of=software_library,
+        software_method = dt.software_method(label=fun,
+                                             part_of=software_library,
                                              is_implemented_by=code_list[1])
     else:
         raise TypeError("Argument code_list is of a wrong type, see Readme")

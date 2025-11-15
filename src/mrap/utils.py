@@ -56,13 +56,12 @@ def get_library_info(lib):
     :return: a dictionary with the library information, or None if not found
     """
     try:
-        version(lib)
+        version_lib = version(lib)
     except PackageNotFoundError:
         version_lib = None
         url_lib = None
         print("Software library information is not available, please add manually")
     else:
-        version_lib = version(lib)
         list_urls = metadata(lib).get_all('Project-URL')
         for entry in list_urls:
             if "documentation" in entry.casefold():
