@@ -36,53 +36,45 @@ either the data URL or the file name.
 * ``dictionary_results``: metrics as keys with values.
 
 The wrapper writes information about the data, your results, your Python version, 
-the library version, etc. After adding the information about the algorithm and the task manually, 
-and correcting any fields you wish, you can convert the instance 
-into a machine-readable JSON-LD string. 
+the library version, etc. You can add or correct any information in relevant fields.  
   
 ```python
 from mrap.analytic_instances import algorithm_evaluation
-from dtreg.to_jsonld import to_jsonld
 ## run your analysis and write the results as a dictionary
 results_dict = {"F1": 0.46, "recall": 0.51}
 ## create your instance with the wrapper
-my_instance = algorithm_evaluation(["the_library", "the_line_of_code"], 
-                                   "my_URL", results_dict)
-## modify the instance by writing fields manually
-my_instance.evaluates = "my_fancy_algorithm"
-my_instance.evaluates_for = "Classification"
-## write the instance in JSON-LD format as a string
-my_json = to_jsonld(my_instance)
-## the result can be saved as a JSON file
-with open('my_file.json', 'w') as f:
-    f.write(my_json)
-
+eval_instance = algorithm_evaluation(["the_library", "the_line_of_code"], 
+                                   "my_URL", 
+                                   results_dict)
+## add information about the algorithm and the task                                   
+eval_instance.evaluates = "my_fancy_algorithm"
+eval_instance.evaluates_for = "Classification"
 ```
 It is also possible to write the results of a few algorithms evaluated on the same data
-for the same task and include these into the data_analysis datatype:
-
+for the same task.
 ```python
 from mrap.list_algorithm_evaluations import list_algorithm_evaluations
-from dtreg.load_datatype import load_datatype
-from dtreg.to_jsonld import to_jsonld
 ## run your analysis and write a nested dictionary
-my_results = {"ABC": {"F1": 0.46, "recall": 0.64},
+results_nested = {"ABC": {"F1": 0.46, "recall": 0.64},
              "KLM": {"F1": 0.55, "recall": 0.38},
              "XYZ": {"F1": 0.87, "recall": 0.78}}
 ## create the list of instances
-all_results = list_algorithm_evaluations("N/A", "my URL", "Classification", my_results)
-## modify any instance manually
-all_results[0].label = "ABC evaluation on XXX data"
-## load the data_analysis datatype and create the final instance
-dt_final = load_datatype("https://doi.org/21.T11969/feeb33ad3e4440682a4d")
-final_instance = dt_final.data_analysis(has_part=all_results)
-## make any changes to the final instance
-final_instance.is_implemented_by = "code_URL"
-## write the final instance in JSON-LD format as a string
-final_json = to_jsonld(final_instance)
-## the result can be saved as a JSON file
-with open('final_file.json', 'w') as f:
-    f.write(final_json)
+eval_instance = list_algorithm_evaluations("N/A", "my URL", "Classification", my_results)
+## when manually modifying the instance, select an element of the list
+eval_instance[2].label = "XYZ evaluation"
+```
+You can include the instance in data analysis instance, 
+convert it into a machine-readable JSON-LD string,
+and write as a file.
+
+```python
+from mrap.analytic_instances import data_analysis
+from mrap.to_jsonld import to_jsonld
+da_instance = data_analysis(eval_instance)
+da_instance.is_implemented_by = "code_URL"
+my_json = to_jsonld(da_instance)
+with open('data_analysis.json', 'w') as f:
+    f.write(my_json)
 
 ```
 
