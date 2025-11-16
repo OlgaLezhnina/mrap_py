@@ -2,16 +2,17 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
+**100% AI-free: we did not use any AI technologies in developing this package.**
+
 The goal of mrap is to provide wrapper functions to reduce the user's effort 
 in writing machine-readable data with the [dtreg library](https://pypi.org/project/dtreg/).
 The growing set of wrappers covers functions from scipy and other widely used libraries.
-The mrap.analytic_instances module contains wrappers for analytical schemata used in 
-the [ORKG-reborn approach](https://reborn.orkg.org/pages/help).
+The mrap.analytic_instances module contains wrappers for analytical schemata used by [TIB Knowledge Loom](https://knowledgeloom.tib.eu/).
 
 To write the results of your data analysis as JSON-LD:
 * Select a wrapper from mrap, check the types of arguments it requires, and create an instance.
 * Modify the instance by setting or correcting its fields manually.
-* Write the finalised instance as a machine-readable JSON-LD file with dtreg.        
+* Write the finalised instance as a machine-readable JSON-LD file.        
 
 ## Installation
 
@@ -19,8 +20,8 @@ To write the results of your data analysis as JSON-LD:
 ## activate a virtual environment (optional)
 python3 -m venv .venv
 source .venv/bin/activate
-## install mrap from GitHub:
-pip install git+https://github.com/OlgaLezhnina/mrap_py.git
+## install from PyPi:
+pip install mrap
 ```
 
 ## Example
@@ -85,4 +86,4 @@ with open('final_file.json', 'w') as f:
 
 ```
 
-For more information, please see the [help page](https://reborn.orkg.org/pages/help).
+For more information, please see the [help page](https://knowledgeloom.tib.eu/pages/help).
