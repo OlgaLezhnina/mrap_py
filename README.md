@@ -26,7 +26,7 @@ pip install mrap
 
 ## Example
 Let us assume you intend to report the classification performance of your_fancy_algorithm. 
-From the [help page](https://reborn.orkg.org/pages/help) you know that the wrapper of choice is 
+From the [help page](https://knowledgeloom.tib.eu/pages/help) you know that the wrapper of choice is 
 ``algorithm_evaluation()``. The required arguments are:
 
 * ``code_list``: a string "N/A" if not given or a list of two strings -
