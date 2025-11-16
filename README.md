@@ -33,7 +33,7 @@ From the [help page](https://reborn.orkg.org/pages/help) you know that the wrapp
 the library and the line of code used for implementing the analysis.
 * ``input_data``: a pd.DataFrame, a dictionary of pd.Series with names, or a string which is
 either the data URL or the file name. 
-* ``dictionary_results``: metrics as keys with values.
+* ``dictionary_results``: a dictionary with metrics names as keys.
 
 The wrapper writes information about the data, your results, your Python version, 
 the library version, etc. You can add or correct any information in relevant fields.  
@@ -63,7 +63,7 @@ eval_instance = list_algorithm_evaluations("N/A", "my URL", "Classification", my
 ## when manually modifying the instance, select an element of the list
 eval_instance[2].label = "XYZ evaluation"
 ```
-You can include the instance in data analysis instance, 
+You can include the evaluation instance in data analysis instance, 
 convert it into a machine-readable JSON-LD string,
 and write as a file.
 
