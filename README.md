@@ -1,12 +1,13 @@
 # mrap
 <!-- badges: start -->
+![Python](https://img.shields.io/badge/python-3.8-blue.svg)
 <!-- badges: end -->
 
 **100% AI-free: we did not use any AI technologies in developing this package.**
 
 The goal of mrap is to provide wrapper functions to reduce the user's effort 
 in writing machine-readable data with the [dtreg library](https://pypi.org/project/dtreg/).
-The growing set of wrappers covers functions from scipy and other widely used libraries.
+All-in-one wrappers (such as scipy_f_oneway) will cover functions from scipy and other widely used libraries.
 The mrap.analytic_instances module contains wrappers for analytical schemata used by [TIB Knowledge Loom](https://knowledgeloom.tib.eu/).
 
 To write the results of your data analysis as JSON-LD:
