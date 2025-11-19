@@ -1,6 +1,7 @@
 # mrap
 <!-- badges: start -->
 ![Python](https://img.shields.io/badge/python-3.8-blue.svg)
+![coverage](https://gitlab.com/TIBHannover/lki/knowledge-loom/mrap-python/badges/master/coverage.svg)
 <!-- badges: end -->
 
 **100% AI-free: we did not use any AI technologies in developing this package.**
