@@ -12,4 +12,4 @@ testing:
     - pip install .
     - coverage run -m unittest discover -s tests -p "*.py" -v
     - coverage report -m
-  coverage: '/TOTAL.*([0-9]{1,3}%)/'
+  coverage: '/TOTAL.+ ([0-9]{1,3}%)/'
