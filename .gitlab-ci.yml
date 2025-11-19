@@ -1,5 +1,5 @@
 default:
-  image: ubuntu/python
+  image: python:3.10
 
 testing:
   stage: test
