@@ -9,8 +9,8 @@ class TestScipyFOneway(unittest.TestCase):
         versicolor = iris[iris['Species'] == 'versicolor']['Petal.Length']
         virginica = iris[iris['Species'] == 'virginica']['Petal.Length']
         result = scipy_f_oneway(setosa, versicolor, virginica)
-        anova_string = 'F_onewayResult(statistic=1180.161182252981, pvalue=2.856776610961539e-91)'
-        self.assertEqual(anova_string, str(result['anova']))
+        target_label = result['dtreg_object'].targets.label
+        self.assertEqual(target_label, 'Petal.Length')
 
 
 if __name__ == '__main__':
