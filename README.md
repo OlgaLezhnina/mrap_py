@@ -1,5 +1,6 @@
 # mrap
 <!-- badges: start -->
+[![PyPI version](https://badge.fury.io/py/mrap.svg?cache-control=no-cache)](https://badge.fury.io/py/mrap)
 ![Python](https://img.shields.io/badge/python-3.8-blue.svg)
 ![coverage](https://gitlab.com/TIBHannover/lki/knowledge-loom/mrap-python/badges/master/coverage.svg)
 <!-- badges: end -->
