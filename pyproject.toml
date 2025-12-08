@@ -10,7 +10,7 @@ authors = [
     {name = "Markus Stocker", email = "markus.stocker@tib.eu"},
 ]
 maintainers = [
-    {name = "Olga Lezhnina", email = "olga.lezhnina@tib.eu"}
+    {name = "Markus Stocker", email = "markus.stocker@tib.eu"}
 ]
 description = "Machine-Readable Data Analysis Results with Function Wrappers"
 readme = "README.md"
